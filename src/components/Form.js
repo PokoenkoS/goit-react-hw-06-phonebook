@@ -10,6 +10,7 @@ import { nanoid } from 'nanoid'
 
   const dispatch = useDispatch();
   const contacts = useSelector(state=>state.contacts);
+
   
  const handeleSubmite = (e) =>{
     e.preventDefault();
@@ -24,7 +25,7 @@ const id = nanoid();
       return alert (`${contacts.name}: ${contacts.number} already in contacts` )
     }
   dispatch(addContact({name, number, id}));
-form.reset();
+   form.reset();
 
    }
 

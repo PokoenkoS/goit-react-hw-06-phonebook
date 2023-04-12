@@ -6,14 +6,18 @@ import { deleteContact } from "redux/phoneSlice";
 const ContactList =()=> {
   const dispatch = useDispatch();
   const contacts = useSelector(state=>state.contacts);
- 
-  console.log(contacts);
+ const filter = useSelector(state => state.filter);
 
+ const filterContacts = contacts.contacts.filter(({name, number})=> 
+  name.toLocaleLowerCase().includes(filter) || 
+  number.toLocaleLowerCase().includes(filter)
+ )
+console.log(filterContacts);
        return(
     <div>
     
     <ul>
-    {contacts.contacts.map((contact) =>{return (
+    {filterContacts.map((contact) =>{return (
     <li key={contact.id}>
     {contact.name}:{contact.number}
     <button type="submit" onClick={()=>dispatch(deleteContact(contacts))}> Delete</button>
@@ -24,6 +28,8 @@ const ContactList =()=> {
   </div> 
 )
 };
+
+
 ContactList.propTypes = {
   contacts: PropTypes.array,
 }
