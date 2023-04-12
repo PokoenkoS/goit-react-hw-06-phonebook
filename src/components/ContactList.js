@@ -8,7 +8,7 @@ const ContactList =()=> {
   const contacts = useSelector(state=>state.contacts);
  
   console.log(contacts);
-  
+
        return(
     <div>
     
@@ -16,7 +16,7 @@ const ContactList =()=> {
     {contacts.contacts.map((contact) =>{return (
     <li key={contact.id}>
     {contact.name}:{contact.number}
-    <button type="submit" onClick={()=>dispatch(deleteContact())}> Delete</button>
+    <button type="submit" onClick={()=>dispatch(deleteContact(contacts))}> Delete</button>
     </li>
     )
     })}

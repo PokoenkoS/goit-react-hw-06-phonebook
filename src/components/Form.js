@@ -1,24 +1,33 @@
 import React from "react";
 
 import { Button, FormDiv, FormLabel } from "./Main.styled";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addContact } from "redux/phoneSlice";
+import { nanoid } from 'nanoid'
 
 
  const Form =()=>{
 
   const dispatch = useDispatch();
+  const contacts = useSelector(state=>state.contacts);
   
  const handeleSubmite = (e) =>{
     e.preventDefault();
 
+const id = nanoid();
     const form = e.currentTarget;
     const name = form.elements.name.value;
     const number = form.elements.number.value;
-  dispatch(addContact({name, number}));
- 
-  console.log(form.elements.number.value);
-  }
+    
+    if (contacts.contacts.find(item => item.name ===name
+      || item.number === number )) {
+      return alert (`${contacts.name}: ${contacts.number} already in contacts` )
+    }
+  dispatch(addContact({name, number, id}));
+form.reset();
+
+   }
+
 
     return(
         <FormDiv onSubmit={handeleSubmite}
