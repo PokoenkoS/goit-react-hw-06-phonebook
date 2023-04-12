@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { useSelector, useDispatch } from "react-redux";
 import { deleteContact } from "redux/phoneSlice";
 
+
 const ContactList =()=> {
   const dispatch = useDispatch();
   const contacts = useSelector(state=>state.contacts);
@@ -13,6 +14,9 @@ const ContactList =()=> {
   number.toLocaleLowerCase().includes(filter)
  )
 console.log(filterContacts);
+
+
+
        return(
     <div>
     
