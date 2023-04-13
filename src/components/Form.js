@@ -20,7 +20,7 @@ const id = nanoid();
     const name = form.elements.name.value;
     const number = form.elements.number.value;
     
-    if (contacts.contacts.find(item => item.name ===name
+    if (contacts.find(item => item.name ===name
       || item.number === number )) {
       return alert (`${contacts.name}: ${contacts.number} already in contacts` )
     }

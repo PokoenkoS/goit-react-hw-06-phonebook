@@ -9,14 +9,11 @@ const ContactList =()=> {
   const contacts = useSelector(state=>state.contacts);
  const filter = useSelector(state => state.filter);
 
- const filterContacts = contacts.contacts.filter(({name, number})=> 
+ const filterContacts = contacts.filter(({name, number})=> 
   name.toLocaleLowerCase().includes(filter) || 
   number.toLocaleLowerCase().includes(filter)
  )
-console.log(filterContacts);
-
-
-
+console.log(contacts);
        return(
     <div>
     
