@@ -23,4 +23,3 @@ export const phoneSlice = createSlice({
 
 export const {addContact, deleteContact} = phoneSlice.actions;
 export const contactsReducer = phoneSlice.reducer;
-// export const getContactValue = state => state.contacts.value;

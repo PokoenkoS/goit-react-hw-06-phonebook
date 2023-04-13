@@ -10,8 +10,8 @@ const ContactList =()=> {
  const filter = useSelector(state => state.filter);
 
  const filterContacts = contacts.filter(({name, number})=> 
-  name.toLocaleLowerCase().includes(filter) || 
-  number.toLocaleLowerCase().includes(filter)
+  name.toLocaleLowerCase().includes(filter.toLocaleLowerCase()) || 
+  number.toLocaleLowerCase().includes(filter.toLocaleLowerCase())
  )
 console.log(contacts);
        return(

@@ -16,17 +16,16 @@ import {
   const persistConfig = {
     key: 'contact',
     storage,
-    whitelist:['contacts']
+    blacklist:['filter']
   };
   
-
-
-const contactReducer = combineReducers({
+  const contactReducer = combineReducers({
        contacts: contactsReducer,
-        filter: filterReducer
+       filter: filterReducer
      
     });
-    const persistedReducer = persistReducer(persistConfig, contactReducer);
+
+  const persistedReducer = persistReducer(persistConfig, contactReducer);
 
     export const store = configureStore({
         reducer:persistedReducer,
