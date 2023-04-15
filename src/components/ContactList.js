@@ -13,7 +13,7 @@ const ContactList =()=> {
   name.toLocaleLowerCase().includes(filter.toLocaleLowerCase()) || 
   number.toLocaleLowerCase().includes(filter.toLocaleLowerCase())
  )
-console.log(contacts);
+
        return(
     <div>
     

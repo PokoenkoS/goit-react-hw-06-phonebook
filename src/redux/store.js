@@ -30,7 +30,7 @@ import {
     export const store = configureStore({
         reducer:persistedReducer,
      middleware(getDefaultMiddleware) {
-    return getDefaultMiddleware({
+          return getDefaultMiddleware({
             serializableCheck: {
               ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
             },
